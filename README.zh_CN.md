@@ -31,9 +31,9 @@ $ npm stop
 
 ### npm 脚本
 
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
+- 使用 `npm run lint` 检查代码风格.
+- 使用 `npm test` 进行单元测试.
+- 使用 `npm run autod` 自动检测依赖项升级, 请参阅 [autod](https://www.npmjs.com/package/autod) 了解更多详情.
 
 ### 导入数据
 
