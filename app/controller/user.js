@@ -6,10 +6,27 @@ const resourceData = require('../../data.json');
  */
 class UserController extends Controller {
 
+    async login() {
+        const {ctx, service} = this;
+        let {name, password} = ctx.request.body;
+        password = ctx.helper.encrypt(password);
+        try {
+            let user = await service.user.login(name, password);
+            if (user.message) return ctx.helper.success(ctx, user);
+            const token = ctx.helper.jwtset(JSON.stringify(user));
+            ctx.cookies.token = token;
+            return ctx.helper.success(ctx, {token});
+        } catch (e) {
+            return ctx.helper.error(ctx, e.message);
+        }
+    }
+
     async create() {
         const {ctx, service} = this;
         const userInfo = ctx.request.body;
         try {
+            let user = await ctx.model.User.findOne({name: userInfo.name});
+            if (user) return ctx.body = {code: 500, message: `帐号 ${userInfo.name} 已存在`};
             await service.user.create(userInfo);
             return ctx.helper.success(ctx);
         } catch (e) {
