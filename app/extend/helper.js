@@ -1,6 +1,6 @@
 "use strict";
 const Crypto = require('crypto');
-
+const jwt = require('jsonwebtoken');
 /**
  * helper
  * @type {{encrypt(*=): *, success(*, *, *=, *=): *, error(*, *=, *=, *=): *}}
@@ -19,4 +19,7 @@ module.exports = {
             code, message, data,
         }
     },
+    jwtset(data) {
+        return jwt.sign(data, this.config.pwd_salt);
+    }
 };
