@@ -4,6 +4,16 @@ const Service = require('egg').Service;
  * user service crud
  */
 class UserService extends Service {
+
+    async login(name, password) {
+        const {ctx} = this;
+        let user_by_name = await ctx.model.User.findOne({name});
+        if (!user_by_name) return {message: `未找到 ${name} 的帐号`};
+        let user = await ctx.model.User.findOne({name, password});
+        if (!user) return {message: `帐号密码不匹配`};
+        else return user;
+    }
+
     async create(user) {
         const {ctx} = this;
         user.password = ctx.helper.encrypt(user.password);
