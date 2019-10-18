@@ -1,4 +1,12 @@
-[TOC]
+- [egg-mongodb-demo](#egg-mongodb-demo)
+    + [中文版](#%E4%B8%AD%E6%96%87%E7%89%88)
+  * [QuickStart](#quickstart)
+    + [Development](#development)
+    + [Deploy](#deploy)
+    + [npm scripts](#npm-scripts)
+    + [import data](#import-data)
+  * [Eggjs operation mongodb tutorial](#eggjs-operation-mongodb-tutorial)
+
 # egg-mongodb-demo
 
 [![egg](https://tool.lu/shield/ajax.html?color=%234C1&subject=doc&status=eggjs)](https://eggjs.org/zh-cn/tutorials/index.html) &emsp;&emsp;
