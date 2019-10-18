@@ -1,3 +1,4 @@
+[TOC]
 # egg-mongodb-demo
 
 [![egg](https://tool.lu/shield/ajax.html?color=%234C1&subject=doc&status=eggjs)](https://eggjs.org/zh-cn/tutorials/index.html) &emsp;&emsp;
