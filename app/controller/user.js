@@ -1,5 +1,4 @@
 const Controller = require('egg').Controller;
-const resourceData = require('../../data.json');
 
 /**
  * user controller
@@ -94,8 +93,18 @@ class UserController extends Controller {
     async insertData() {
         const {ctx} = this;
         try {
-            await resourceData.list.forEach(x => ctx.service.user.create(x));
-            return ctx.helper.success(ctx, resourceData.list.length, 200, `成功添加 ${resourceData.list.length} 条数据`);
+            const result = await ctx.service.user.insertData();
+            return ctx.helper.success(ctx, result.num, 200, `成功添加 ${result.num} 条数据`);
+        } catch (e) {
+            return ctx.helper.error(ctx, e.message);
+        }
+    }
+
+    async deleteAll(){
+        const {ctx} = this;
+        try {
+            const result = await ctx.service.user.deleteAll();
+            return ctx.helper.success(ctx, result.num, 200, `成功删除 ${result.num} 条数据`);
         } catch (e) {
             return ctx.helper.error(ctx, e.message);
         }

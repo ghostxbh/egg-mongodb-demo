@@ -5,6 +5,10 @@ module.exports = app => {
     const Schema = mongoose.Schema;
 
     const UserSchema = new Schema({
+        _id: {
+          type: String,
+          required: true,
+        },
         name: {
             type: String,
             required: true,

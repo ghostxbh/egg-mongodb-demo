@@ -1,4 +1,6 @@
 const Service = require('egg').Service;
+const resourceData = require('../../data.json');
+const uuid = require('uuid/v4');
 
 /**
  * user service crud
@@ -61,6 +63,22 @@ class UserService extends Service {
             email: 1,
             create_time: 1,
         }).skip(page * size).limit(size);
+    }
+
+    async insertData() {
+        const {ctx} = this;
+        resourceData.list.forEach(item => {
+            item._id = uuid();
+            this.create(item);
+        });
+        return {num: resourceData.list.length};
+    }
+
+    async deleteAll() {
+        const {ctx} = this;
+        const ids = await ctx.model.User.find({},{_id: 1});
+        ids.forEach(item => this.delete(item._id));
+        return {num: ids.length};
     }
 }
 
