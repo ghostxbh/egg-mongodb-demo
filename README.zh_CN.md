@@ -9,9 +9,8 @@
 
 # egg-mongodb-demo
 
-[![egg](https://tool.lu/shield/ajax.html?color=%234C1&subject=doc&status=eggjs)](https://eggjs.org/zh-cn/tutorials/index.html) &emsp;&emsp;
-[![mongodb](https://tool.lu/shield/ajax.html?color=%2397CA00&subject=official&status=mongoDB)](https://www.mongodb.com/) &emsp;&emsp;
-[![mongoose](https://tool.lu/shield/ajax.html?color=%23A4A61D&subject=github&status=egg-mongoose)](https://github.com/eggjs/egg-mongoose)
+[![star](https://gitee.com/ghostxbh/uzy-ssm-mall/badge/star.svg?theme=gray)](https://github.com/ghostxbh/egg-mongodb-demo/stargazers)
+[![fork](https://gitee.com/ghostxbh/uzy-ssm-mall/badge/fork.svg?theme=gray)](https://github.com/ghostxbh/egg-mongodb-demo/members)
 
 ### [英文版](./README.md)
 
